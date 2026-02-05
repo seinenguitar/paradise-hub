@@ -1,0 +1,193 @@
+/* Paradise HUB - Neon Diner Style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Yu Gothic', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #eaeaea;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.hub-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+}
+
+.hub-header h1 {
+    font-size: 3em;
+    color: #ff69b4;
+    text-shadow: 
+        0 0 10px #ff69b4,
+        0 0 20px #ff69b4,
+        0 0 30px #ff1493;
+    margin-bottom: 10px;
+    animation: neon-flicker 3s infinite alternate;
+}
+
+.hub-header .subtitle {
+    font-size: 1.2em;
+    color: #87ceeb;
+    text-shadow: 0 0 5px #87ceeb;
+}
+
+/* ネオンフリッカーアニメーション */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 10px #ff69b4,
+            0 0 20px #ff69b4,
+            0 0 30px #ff1493;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* ウェルカムセクション */
+.welcome-section {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #87ceeb;
+}
+
+.welcome-section h2 {
+    color: #87ceeb;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+/* チャットコンテナ */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loading {
+    text-align: center;
+    color: #87ceeb;
+    font-size: 1.2em;
+    padding: 40px;
+}
+
+/* チャットボックス（掲示板スタイル） */
+.chat-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chat-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* キャラクター別カラー */
+.chat-box.master {
+    border-left-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.chat-box.guest {
+    border-left-color: #87ceeb;
+    box-shadow: 0 0 15px rgba(135, 206, 235, 0.2);
+}
+
+.chat-box.neon {
+    border-left-color: #ff1493;
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.2);
+}
+
+.chat-box.kero {
+    border-left-color: #7fff00;
+    box-shadow: 0 0 15px rgba(127, 255, 0, 0.2);
+}
+
+/* チャットヘッダー */
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-icon {
+    font-size: 2em;
+}
+
+.chat-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.chat-role {
+    color: #ffd700;
+    font-size: 0.9em;
+    margin-left: auto;
+}
+
+.chat-date {
+    color: #999;
+    font-size: 0.85em;
+}
+
+/* チャット本文 */
+.chat-content {
+    color: #eaeaea;
+    line-height: 1.8;
+    font-size: 1em;
+    white-space: pre-wrap;
+}
+
+/* フッター */
+.hub-footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .hub-header h1 {
+        font-size: 2em;
+    }
+    
+    .chat-box {
+        padding: 15px;
+    }
+    
+    .chat-header {
+        flex-wrap: wrap;
+    }
+}
